@@ -1,0 +1,17 @@
+Machine learning for stock market is like "Digital Advisor".
+
+Every system should follow
+1. Data Ingestion: Gathering the raw "raw materials" (Price & Volume, etc).
+2. Feature Engineering: Refining raw data into "indicators" that show trends or momentum (The "Why" for the model).
+3. Model Training (eg, Random Forest): Teaching the model by showing it historical patterns and the results that followed.
+4. Signal Evaluation: Testing the model on new data to see if its "Buy" signals actually lead to profit.
+
+Machine learning models cannot "see" a chart. They only see numbers. 
+Feature Engineering is the act of creating numbers that represent market concepts.
+
+Features - 
+1. Returns: This tells the model the "speed" of the price change.
+2. SMA (Simple Moving Average): This smooths out daily "noise" to show the Trend. If Price > SMA, the trend is up. If Price < SMA, the trend is down.
+
+
+
