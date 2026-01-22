@@ -9,9 +9,123 @@ Every system should follow
 Machine learning models cannot "see" a chart. They only see numbers. 
 Feature Engineering is the act of creating numbers that represent market concepts.
 
-Features - 
-1. Returns: This tells the model the "speed" of the price change.
-2. SMA (Simple Moving Average): This smooths out daily "noise" to show the Trend. If Price > SMA, the trend is up. If Price < SMA, the trend is down.
+
+Alpha Factors
+1. Price & Momentum (The "What is happening now?" features)
+These are calculated directly from price data and are the most common starting point.
+Trend - SMA (10, 50, 200), EMA, MACD - Helps the model identify the "path of least resistance."
+Momentum - RSI, Stochastic Oscillator, ROC - Identifies if the move is "strong" or "exhausted."
+Returns - Daily Log Returns, Weekly Returns - Measures the velocity of price changes.
+Volatility - Bollinger Bands, ATR, Std Dev - Tells the model if the market is "calm" or "panicking."
+
+2. Volume & Liquidity (The "Is this move real?" features)
+Price moving up is great, but price moving up on high volume is a much stronger signal.
+OBV (On-Balance Volume): High OBV confirms a trend; a falling OBV during a price rise suggests a "fake" move.
+Chaikin Money Flow: Measures if the big players are accumulating (buying) or distributing (selling).
+Volume Z-Score: Measures how today's volume compares to the average. (1.0 = normal, 3.0 = extreme interest).
+
+3. Time-Series & Statistical Features (The "Technical" features)
+These help the model understand the structure of time.
+Lag Features: Providing the price from 1, 3, and 5 days ago as separate inputs so the model can see the "shape" of the past week.
+Day of Week: Some stocks behave differently on Mondays (market opening) vs. Fridays (profit-taking).
+Distance from Mean: The percentage difference between the Current Price and the 200-day Moving Average (shows if a stock is "extended").
+
+4. Alternative & External Data (The "Advanced" features)
+Once you master the basics, you add "Context" from outside the stock itself.
+Sentiment Score: A number from -1 to +1 derived from news headlines (using NLP).
+Market Correlation: How the S&P 500 (SPY) is performing compared to your specific stock.
+Interest Rates/VIX: General market "fear" (VIX) or economic health indicators.
+
+
+How to tackle any business problem
+Objective: "Refined a vague business question into a supervised learning task."
+Action: "Identified key features and trained a [Model Name] to identify patterns."
+Result: "Provided an evaluation metric that directly relates to [Revenue/Risk/Time saved]."
+
+
+
+Prerequisites for markets
+
+1. Mathematical Prerequisites
+1.1 Algebra - 
+We will deal with the matrices more often
+Basic matric operations - Addition, multication, subtraction, Transpose
+
+
+2.Statistics Prerequisites
+Mean - sum of all values divided by the number of values.
+Variance - measure of the dispersion of values in a sample.
+Standard deviation - squared root of the variance. We used to calculate volatility of an asset.
+Cumulative sum - cumulative sum is a sequence of partial sums of a given sequence.
+Cumulative product - Product of all values in sequenceMean squared error (MSE)
+Mean squared error (MSE)
+Mean absolute error (MAE)
+
+Statistical tests - augmented Dick and Fuller test
+In any statistical test, we have only two possibilities - we reject H0, or we cannot reject H0.
+We use p-value to check which possibility to select
+• p > s: we can’t reject H0
+• p < s : we can reject H0
+
+probability laws
+There are 2 essential functions in probability
+1. Cumulative distribution function or repartition function - probability that the random variable X is below the value x. 
+2. Probability density function (PDF) - to understand the distributions of observations.
+
+Optimization - 
+optimization methods allow us to minimize or maximize a function under constraints.
+
+Prerequisites in finance
+1. Market efficiency -  
+different levels of efficiency
+Weak market efficiency
+Semi-strong market efficiency
+Strong market efficiency
+
+Basics of trading
+CFD (Contract for Differences).
+shorting an asset
+spread - difference between the bid price and the asking price.
+leverage
+Stop Loss
+
+Basics of portfolio management - goal of portfolio management is to invest using technic to reduce
+the portfolio’s risk
+meanvariance portfolio theory
+
+Prerequisites in Python
+
+Libraries for data science
+1. Numpy
+2. Pandas
+3. Matplotlib
+
+Libraries for finance
+1. Yfinance
+2. Datetime
+3. Time
+
+Libraries for mathematics
+1. Scipy
+2. StatsModels
+
+Portfolio management, risk management and backtesting
+1. Static Portfolio management
+Why behind portfolio optimization methods - 
+There are two types of risks - Systematic risk and specific risk
+Asset-specific risk is the risk associated with an asset that does not
+depend on market conditions.
+systemic risk is a macroeconomic risk on all the economy's
+assets
+
+objective of the portfolio optimization methods is to reduce the
+specific risk in the portfolio. For that we use diversification
+
+diversification - to increase the number of assets in the portfolio to
+make the specific risk of each asset insignificant.
+
+The traditional portfolio optimization methods
+
 
 
 
